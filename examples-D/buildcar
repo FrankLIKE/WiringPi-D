@@ -1,0 +1,16 @@
+
+#! /bin/sh
+dfiles="max31855.d max5322.d mcp23008.d mcp23016.d mcp23016reg.d mcp23017.d mcp23s08.d mcp23s17.d mcp23x08.d mcp23x0817.d mcp3002.d mcp3004.d mcp3422.d mcp4802.d pcf8574.d pcf8591.d sn3218.d softPwm.d softServo.d softTone.d sr595.d wiringPi.d wiringPiI2C.d wiringPiSPI.d wiringSerial.d wiringShift.d wpiExtensions.d"
+
+ofiles="drcSerial.o max31855.o max5322.o mcp23008.o mcp23016.o  mcp23017.o mcp23s08.o mcp23s17.o mcp3002.o mcp3004.o mcp3422.o mcp4802.o pcf8574.o pcf8591.o piHiPri.o piThread.o sn3218.o softPwm.o softServo.o softTone.o sr595.o wiringPi.o wiringPiI2C.o wiringPiSPI.o wiringSerial.o wiringShift.o wpiExtensions.o"
+ #gcc --target-help
+ #/opt/arm-unknown-linux-gnueabihf/bin/arm-unknown-linux-gnueabihf-gcc --target-help
+/opt/arm-unknown-linux-gnueabihf/bin/arm-unknown-linux-gnueabihf-gcc -c ../wiringPi/*.c -marm -I. -I../wiringPi
+/opt/arm-unknown-linux-gnueabihf/bin/arm-unknown-linux-gnueabihf-gdc  -o car car.d  $ofiles -I ../wiringPi-D/*.d
+rm *.o
+
+
+
+ 
+
+

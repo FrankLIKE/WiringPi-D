@@ -1,0 +1,55 @@
+import wiringPi;
+import std.stdio;
+ pragma(lib,"aa.so");
+int main()
+{
+	writeln("start");
+	init();
+	forward(500);
+	delay(1000);
+	left(500);
+	delay(1000);
+return 0;
+}
+
+void init()
+{
+	wiringPiSetup();
+	pinMode(0,OUTPUT);
+	pinMode(1,OUTPUT);
+	pinMode(2,OUTPUT);
+	pinMode(3,OUTPUT);
+}
+void forward(int itimes)
+{
+	digitalWrite(0,HIGH);
+	digitalWrite(1,LOW);
+	digitalWrite(2,HIGH);
+	digitalWrite(3,LOW);
+	delay(itimes);
+}
+void backoff(int itimes)
+{
+	digitalWrite(0,LOW);
+	digitalWrite(1,HIGH);
+	digitalWrite(2,LOW);
+	digitalWrite(3,HIGH);
+	delay(itimes);
+}
+void left(int itimes)
+{
+	digitalWrite(0,HIGH);
+	digitalWrite(1,LOW);
+	//digitalWrite(2,FALSE);
+	//digitalWrite(3,FALSE);
+	delay(itimes);
+}
+void right(int itimes)
+{
+	//digitalWrite(0,FALSE);
+	//digitalWrite(1,FALSE);
+	digitalWrite(2,HIGH);
+	digitalWrite(3,LOW);
+	delay(itimes);
+} 
+
