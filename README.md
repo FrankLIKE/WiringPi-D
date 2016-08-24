@@ -12,13 +12,12 @@ Must to Do:
 
    On  Raspberry Pi,you can use it : http://gdcproject.org/downloads/binaries/5.2.0/arm-linux-gnueabihf/gdc-5.2.0+2.066.1.tar.xz
    
-    (do it like this:
+    do it like this:
     
       xz -d gdc-5.2.0+2.066.1.tar.xz
       
       tar xvf gdc-5.2.0+2.066.1.tar
       
-      )
       
 2.Put the folder(arm-unknown-linux-gnueabihf) to /opt (linux OS:such as Ubuntu) 
 
